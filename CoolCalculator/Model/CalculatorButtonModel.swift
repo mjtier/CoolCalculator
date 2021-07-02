@@ -10,7 +10,7 @@ import UIKit
 enum CalculatorButtonModel: String {
     case zero, one, two, three, four, five, six, seven, eight, nine
     case equals, plus, minus, multiply, divide, decimal
-    case ac, plusMinus, percent, empty
+    case ac, plusMinus, percent
     
     var title: String {
         switch self {
@@ -26,13 +26,12 @@ enum CalculatorButtonModel: String {
         case .nine: return "9"
         case .plus: return "+"
         case .minus: return "-"
-        case .multiply: return "X"
-        case .divide: return "/"
-        case .plusMinus: return "+/-"
+        case .multiply: return "×" 
+        case .divide: return "÷"
+        case .plusMinus: return "±"
         case .percent: return "%"
         case .equals: return "="
         case .decimal: return "."
-        case .empty: return ""
         
         default:
             return "AC"
@@ -41,7 +40,7 @@ enum CalculatorButtonModel: String {
     
     var backgroundColor: UIColor {
         switch self {
-        case .empty, .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .decimal:
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .decimal:
             return .darkGray
         case .ac, .plusMinus, .percent:
             return .lightGray
